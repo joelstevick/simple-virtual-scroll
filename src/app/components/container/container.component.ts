@@ -4,7 +4,10 @@ import {
   Component,
   OnInit
 } from "@angular/core";
-import { ScrollDispatcher, VIRTUAL_SCROLL_STRATEGY } from "@angular/cdk/scrolling";
+import {
+  ScrollDispatcher,
+  VIRTUAL_SCROLL_STRATEGY
+} from "@angular/cdk/scrolling";
 import { ContextViewerStrategy } from "../../strategies/context-viewer.strategy";
 
 const ARRAY_LENGTH = 100;
@@ -35,8 +38,9 @@ export class ContainerComponent implements OnInit {
       this.items[i] = i;
     }
 
-this.scroll.scrolled().subscribe(console.log)
-
+    this.scroll.scrolled().subscribe(() => {
+      console.log("scroll event");
+    });
   }
 
   fetchMoreitems(newIndex: number) {}
